@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Meong</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-color: #ffe5f0;
+            color: #5a1730;
+        }
+
+        header {
+            background-color: #c2185b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+        margin: 0;
+        font-size: 32px;
+        animation: kedip 2.0s ease-in-out infinite;
+        }
+
+        @keyframes kedip {
+        0%, 100% {
+        opacity: 1;
+        }
+
+        50% {
+        opacity: 0.5;
+        }
+        }
+
+        header p {
+            margin: 8px 0 0;
+        }
+
+        nav {
+            background-color: #4a1528;
+            text-align: center;
+            padding: 14px;
+        }
+
+          nav a {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 8px 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        /* EFEK SAAT KURSOR DI MENU */
+        nav a:hover {
+            background-color: rgb(220, 115, 145);
+            color: rgb(100, 20, 50);
+            transform: scale(1.1);
+        }
+
+        .content {
+            min-height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .calculator {
+            width: 400px;
+            background-color: #fffaf7;
+            padding: 30px;
+            border: 2px solid #7b1e3d;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(74, 21, 40, 0.2);
+        }
+
+        /* KOTAK JUDUL KALKULATOR */
+        .calculator h2 {
+            text-align: center;
+            color: #a51c4b;
+            margin: 0 auto 25px;
+            font-size: 20px;
+            background-color: #ffd6e5;
+            border: 1px solid #b84b70;
+            border-radius: 12px;
+            padding: 10px 15px;
+            width: fit-content;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b84b70;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #a51c4b;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #a51c4b;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7b1e3d;
+        }
+
+        .output {
+            margin-top: 25px;
+            padding: 15px;
+            text-align: center;
+            background-color: #ffd6e5;
+            border: 1px solid #b84b70;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #7b1e3d;
+        }
+
+        footer {
+            background-color: #4a1528;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🐱 Kalkulator Meong 🐾</h1>
+        <p>Hitung angka dengan cara yang lebih menyenangkan!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Tentang Meong</a>
+        <a href="#">Jenis Kucing</a>
+        <a href="#">Kebiasaan</a>
+        <a href="tugas2.html">Form</a>
+        <a href="tugas3.html">JavaScript</a>
+    </nav>
+
+    <main class="content" id="kalkulator">
+
+        <div class="calculator">
+
+            <h2>🐱 Kalkulator Sederhana 🐾</h2>
+
+            <div class="input-group">
+                <label for="bilangan1">Input Bilangan 1</label>
+                <input
+                    type="number"
+                    id="bilangan1"
+                    placeholder="Masukkan bilangan pertama"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="bilangan2">Input Bilangan 2</label>
+                <input
+                    type="number"
+                    id="bilangan2"
+                    placeholder="Masukkan bilangan kedua"
+                >
+            </div>
+
+            <div class="buttons">
+                <button onclick="hitung('+')">+</button>
+                <button onclick="hitung('-')">−</button>
+                <button onclick="hitung('*')">×</button>
+                <button onclick="hitung('/')">÷</button>
+            </div>
+
+            <div class="output" id="output">
+                Output: -
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>🐾 Mengenal Dunia Meong 🐱</p>
+
+        <p>
+            - Dunia kecil dengan sejuta tingkah lucu -
+        </p>
+
+        <p>© 2026</p>
+    </footer>
+
+    <script>
+        function hitung(operator) {
+
+            let bilangan1 =
+                Number(document.getElementById("bilangan1").value);
+
+            let bilangan2 =
+                Number(document.getElementById("bilangan2").value);
+
+            let hasil;
+
+            if (operator === "+") {
+                hasil = bilangan1 + bilangan2;
+            }
+
+            else if (operator === "-") {
+                hasil = bilangan1 - bilangan2;
+            }
+
+            else if (operator === "*") {
+                hasil = bilangan1 * bilangan2;
+            }
+
+            else if (operator === "/") {
+
+                if (bilangan2 === 0) {
+                    hasil = "Tidak dapat dibagi dengan 0";
+                } else {
+                    hasil = bilangan1 / bilangan2;
+                }
+
+            }
+
+            document.getElementById("output").innerHTML =
+                "Output: " + hasil;
+        }
+    </script>
+
+</body>
+</html>

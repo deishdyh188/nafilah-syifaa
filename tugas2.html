@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2 - Formulir Imut Dunia Meong</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('kucing.jpg');
+            background-size: 150px;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* MENU */
+        nav {
+        background: #541224;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        }
+
+        nav a {
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        margin: 0 7px;
+        padding: 6px 10px;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 8px;
+        }
+
+        nav a:hover {
+        background-color: rgb(220, 115, 145);
+            color: rgb(100, 20, 50);
+            transform: scale(1.1);
+        }
+
+        /* FORM */
+        .form-container {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 24px;
+            border: 3px dashed #541224;
+            box-shadow: 0 8px 24px rgba(84, 18, 36, 0.15);
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        .back-nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .back-nav a {
+            color: #d63384;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            background: #fff0f2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #e27d95;
+        }
+
+        .back-nav a:hover {
+            background: #d63384;
+            color: white;
+        }
+
+        h2 {
+            color: rgb(100, 20, 50);
+            text-align: center;
+            margin: 0 0 25px;
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: rgb(100, 20, 50);
+            font-size: 14px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e27d95;
+            border-radius: 12px;
+            font-size: 14px;
+            background: #fff9fa;
+            color: rgb(100, 20, 50);
+            outline: none;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: rgb(100, 20, 50);
+            background: white;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input {
+            padding-right: 40px;
+        }
+
+        .paw-icon {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+        }
+
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 8px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: normal;
+            background: #fff0f2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #f5c2c7;
+            font-size: 13px;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            width: 16px;
+            height: 16px;
+            accent-color: #d63384;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            width: 50%;
+            padding: 14px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: inherit;
+            color: white;
+        }
+
+        .btn-submit {
+            background: #541224;
+        }
+
+        .btn-submit:hover {
+            background: #781c34;
+        }
+
+        .btn-reset {
+            background: #d63384;
+        }
+
+        .btn-reset:hover {
+            background: #f04b9b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU / NAVIGASI -->
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Tentang Meong</a>
+    <a href="#">Jenis Kucing</a>
+    <a href="#">Kebiasaan</a>
+    <a href="tugas2.html">Form</a>
+    <a href="tugas3.html">JavaScript</a>
+    </nav>
+
+    <!-- FORMULIR -->
+    <div class="form-container">
+
+        <div class="back-nav">
+            <a href="#">Formulir Pendaftaran</a>
+        </div>
+
+        <h2>🐱 Daftar Akun Baru 🐱</h2>
+
+        <form>
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+
+                <div class="input-wrapper">
+                    <input type="text" id="username" name="username"
+                        placeholder="Ketik nama gaulmu..." required>
+
+                    <div class="paw-icon">🐾</div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+
+                <div class="input-wrapper">
+                    <input type="password" id="password" name="password"
+                        placeholder="Ketik sandi rahasia..." required>
+
+                    <div class="paw-icon">🐾</div>
+                </div>
+            </div>
+
+            <!-- Alamat -->
+            <div class="form-group">
+                <label for="alamat">Alamat Rumah:</label>
+
+                <textarea id="alamat" name="alamat"
+                    placeholder="Tulis alamat tempat tinggalmu sekarang..."></textarea>
+            </div>
+
+            <!-- Jenis Kelamin -->
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="Laki-laki">
+                        Laki-laki
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Perempuan">
+                        Perempuan
+                    </label>
+                </div>
+            </div>
+
+            <!-- Program Studi -->
+            <div class="form-group">
+                <label for="prodi">Program Studi:</label>
+
+                <select id="prodi" name="prodi">
+                    <option value="">-- Pilih Jurusan Kamu --</option>
+                    <option value="S1 Ilmu Komputer">
+                        S1 Ilmu Komputer 💻
+                    </option>
+                    <option value="S1 Sistem Informasi">
+                        S1 Sistem Informasi 📊
+                    </option>
+                    <option value="S1 Teknologi Informasi">
+                        S1 Teknologi Informasi ⚙️
+                    </option>
+                </select>
+            </div>
+
+            <!-- Tanggal Lahir -->
+            <div class="form-group">
+                <label for="tanggal_lahir">Tanggal Lahir:</label>
+
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+            </div>
+
+            <!-- Hobi -->
+            <div class="form-group">
+                <label>Hobi Favorit:</label>
+
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="hobi" value="Melukis">
+                        Melukis 👩🏻‍🎨
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobi" value="Membaca">
+                        Membaca 📚
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="hobi" value="Menulis">
+                        Menulis ✍🏻
+                    </label>
+                </div>
+            </div>
+
+            <!-- Tombol -->
+            <div class="button-group">
+                <button type="submit" class="btn btn-submit">
+                    Kirim Data ✨
+                </button>
+
+                <button type="reset" class="btn btn-reset">
+                    Mulai Ulang 🔄
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
